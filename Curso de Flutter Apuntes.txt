@@ -1,0 +1,113 @@
+Curso de Flutter
+
+estilo de arquitectura, (SAber nombre priemra clase), es un tipo para el desarrollo de proyectos.
+
+introduccion al lenguaje de programcion Dart,(Lenguaje deseñado para flutter).
+Es un lenguaje completamente especializado para trabajarlo con flutter.
+
+Tematica Puntual de Dart:
+-Hola mundo 
+-Tipos de datos
+-Estructuras de coleccion de datos
+-Tipos de parametros
+-Clases
+-Diferentes constructores
+-Getters y Setters
+-Futures
+-Streams
+-Async, Async* y Await
+-Decoradores(@override)
+-Etc...
+
+Intro Dart: Lenguaje del lado del cliente optimizado para aplicaciones.(Cuando dice que es al lado del cliente significa que toca descargar algo para poder ejecutar.)
+
+-optimizado para el UI.
+-Permite el Hot Reload.
+-Rapido en todas las plataformas(Cuyas arquitecturas sean ARM o x64),En las computadoras de 32bits no se puede trabajar en flutter.
+
+Al ser creado por google es compatible al 100% dart con flutter.
+Se halba que la sintaxis permite ocmprender de manera sencilla. encoado al UI.
+
+Toda aplicacion dart ejecuta una funcion inicial llamada main(){},Asi mismo su sintaxis tiene familiaridad con : C#, Java, TypeScript.
+
+Como es posible que dart tenga este funcionamiento?
+Cualquier aplicacion de flutter es puro dart y al ser flutter se sigen los lineamientos que este mismo dicta: Flutter , codigo de dar y termina compilando al codigo que esta destinado.
+
+-Hello word:
+dynamic main():Mi funcion puede regresar cualquier cosa.Comodin de retorno,pero se recomienda evitar usar mucho esta funcion, 
+Void, no regrsa un valor de retorno.
+Crear variables:
+Var myName = 'Fernando';
+string myName = 'Fernando';
+Final, Significa que no puedo cambiar el valor que apunta esa variable.(similar a constante).Esta es en el tiempo de construccion.
+const, Es una constante en tiempo de construcion.
+Late final , es una asignacion tardia en el dart.
+print('hola$myName');Interpolacion de string El texto$variable,para el cambio bajo un metodo se tiene que hacer con ${ myName.toUpperCase() }
+
+void main() {
+  for (int i = 0; i < 5; i++) {
+    print('hello ${i + 1}');
+  }
+}
+
+Tipos de Variables que maneja dart y valores de retorno que este maneja.
+-El dart siempre esta pendiente de los valores que pueden o no estar categorizados nullos.
+-el metodo print() espara imprimir en la consola.
+
+final String Pokemon = 'Ditto'; //Su valor no cambia
+final String pokemon2 = 'Pikachu';//Un valor de tipo string
+final int hp = 100; // un valor de tipo entero
+final bool isAlive = true; //Un valor de tipo boleano.
+
+final abilities = ['impostor'];//Esto es un listado o un array.
+final abilities = <String>['impostor','camuflaje'];//El <(Tipo dato)> sirve para definir el tipo de datos que esta guardando la lista[]. otra forma es:
+final List<String> abilities = ['impostor'];//Este es otra manera. la forma recomenda es la forma que mejor utilizen una forma en el desarrollo de la aplicacion.
+
+
+bool? is Alive; //Cambia a 3 posibles valores{Nullo, true o false}//El ? permite que el boleano permita valores nulos, Tambien es aplicable a valores de tipo entero.
+
+print("""
+  $pokemon 
+  $hp
+  $isAlive
+  $pokemon2
+
+""");//String multilinea
+
+Ejemplo clase 2:
+
+void main(){
+  final String pokemon = 'Ditto';
+  final String pokemon2 = 'Pikachu';
+  final int hp = 100;
+  final bool isAlive = true ;
+  final List<String> abilities = ['impostor','camuflaje'];
+  final sprites = <String>['ditto/front.png','ditto/back.png'];
+ 
+  dynamic errorMessage = 'Hola';
+
+  print("""
+  $pokemon
+  $hp
+  $isAlive
+  $pokemon2
+  $sprites
+  $abilities
+  
+  """);
+}
+
+Dynamic Type: Se trata de evitar a que sea posible.Puede ser cualquier tipo de dato
+-Es como un tipo de dato comodin que puede ser cualquier tipo de dato.
+-Al tener tanta libertad pierde cualquier restriccion que se tenga como el 'null-safe'.
+// dynamic == null; //Este por defecto es un dato nullo.
+-Cuando al dynamic se le pone un '?' se vuelve ineccesario por que este por predeterminado es un valor nullo.
+Diferentes datos que se le pueden poner a un dynamic:
+
+-dynamic errorMessage = 'Hola';// un String
+errorMessage = true; //puede ser boleano
+errormessage = [1,2,3]; //Puede ser una lista.
+errorMessage = {1,2,3,4,5,6}; //Se le puede poner un 'Set' de datos.
+errorMessage = ()=> true; //Funcion que regresa un valor boleano
+errorMessage = null;
+
